@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="primary_backup_employee" label="Primary Backup Employee" language="en" table="x_125992_employee_leave_request_table">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>primary_backup_employee</element>
+            <help/>
+            <hint/>
+            <label>Primary Backup Employee</label>
+            <language>en</language>
+            <name>x_125992_employee_leave_request_table</name>
+            <plural>Primary Backup Employees</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-12-08 16:21:49</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>72c384abdb3203006bffd7a0cf9619b8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Primary Backup Employee</sys_name>
+            <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+            <sys_update_name>sys_documentation_x_125992_employee_leave_request_table_primary_backup_employee_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-12-08 16:21:49</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
