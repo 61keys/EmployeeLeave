@@ -8,7 +8,7 @@
         <element label="End date" max_length="40" name="end_date" type="glide_date"/>
         <element label="Hours" max_length="20" name="hours" type="decimal"/>
         <element label="Hours Accrued" max_length="20" name="hours_accrued" type="decimal"/>
-        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element choice="3" label="Request Category" max_length="40" name="request_category" type="choice">
             <choice>
@@ -16,13 +16,14 @@
                 <element label="Floating Holiday" sequence="1" value="Floating Holiday"/>
                 <element label="Jury Duty" sequence="2" value="Jury Duty"/>
                 <element label="Personal Leave" sequence="3" value="Personal Leave"/>
-                <element label="Comp" sequence="4" value="Comp"/>
+                <element label="Excused Leave" sequence="4" value="Excused Leave"/>
                 <element label="Illness - Self" sequence="5" value="Illness - Self"/>
                 <element label="Illness-Other" sequence="6" value="Illness-Other"/>
             </choice>
         </element>
         <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
-        <element label="Title" max_length="256" name="title" type="string"/>
+        <element label="Title" mandatory="true" max_length="128" name="title" type="string"/>
+        <element label="Usan Paid Holidays" max_length="20" name="usan_paid_holidays" type="decimal"/>
         <index name="index">
             <element name="approved_by"/>
         </index>

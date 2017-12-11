@@ -82,7 +82,7 @@
             <element>request_category</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Comp</label>
+            <label>Excused Leave</label>
             <language>en</language>
             <name>x_125992_employee_leave_request_table</name>
             <sequence>4</sequence>
@@ -91,10 +91,10 @@
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
             <sys_id>2c92086bdb3203006bffd7a0cf961923</sys_id>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2017-12-08 16:16:52</sys_updated_on>
-            <value>Comp</value>
+            <sys_updated_on>2017-12-11 13:13:58</sys_updated_on>
+            <value>Excused Leave</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>

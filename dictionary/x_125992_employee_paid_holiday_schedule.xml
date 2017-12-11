@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Paid Holiday Schedule" max_length="40" name="x_125992_employee_paid_holiday_schedule" type="collection">
+        <element label="Floating Holiday" max_length="40" name="floating_holiday" type="boolean"/>
+        <element label="Holiday Date" max_length="40" name="holiday_date" type="glide_date"/>
+        <element choice="1" label="Paid Holday List" max_length="40" name="paid_holday_list" type="choice">
+            <choice>
+                <element label="Independence Day" value="2017-7-4"/>
+                <element label="Memorial Day" value="2017-5-29"/>
+                <element label="New Year’s Day" value="2017-1-1"/>
+            </choice>
+        </element>
+        <element label="Paid Holidays" max_length="128" name="paid_holidays" type="string"/>
+    </element>
+</database>
