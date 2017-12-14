@@ -32,13 +32,15 @@
 	// Add your code here
 	var gDate = new GlideDate();
 	var id = gs.getUserID();	
+	var dt = new SH_EmpTime();
 	
-    var gr = new GlideRecord("sys_user");
-	gr.addQuery('sys_id', id);
-	gr.query(getHiredDate);
-	if(gr.next()){
-			current.comments = gr.x_125992_employee_hired_date;
-		}
+	
+	var hD = dt.getHiredDate(id);
+	var duration = dt.getDays(hD);
+	//current.comments = hD + " " + duration;
+	//current.comments = dt.getHiredDate(id);
+	//current.comments += hD + "\n";
+	current.comments =  duration;
 	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -48,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0d98d35cdb8703006bffd7a0cf96198c</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>38</sys_mod_count>
         <sys_name>Accrual</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -57,7 +59,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_0d98d35cdb8703006bffd7a0cf96198c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-11 18:35:54</sys_updated_on>
+        <sys_updated_on>2017-12-12 14:32:55</sys_updated_on>
         <template/>
         <when>before_display</when>
     </sys_script>

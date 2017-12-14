@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="hours" table="x_125992_employee_leave_request_table">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="x_125992_employee_floating_holidays" table="sys_user">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
@@ -15,7 +15,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Eligible Vacation Hours</column_label>
+        <column_label>Floating Holidays</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -28,13 +28,13 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>hours</element>
+        <element>x_125992_employee_floating_holidays</element>
         <element_reference>false</element_reference>
         <foreign_database/>
-        <internal_type display_value="Decimal">decimal</internal_type>
+        <internal_type display_value="Integer">integer</internal_type>
         <mandatory>false</mandatory>
-        <max_length>15</max_length>
-        <name>x_125992_employee_leave_request_table</name>
+        <max_length>2</max_length>
+        <name>sys_user</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,18 +51,18 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-12-08 16:19:06</sys_created_on>
+        <sys_created_on>2017-12-14 14:41:25</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>eb1300abdb3203006bffd7a0cf9619e5</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Eligible Vacation Hours</sys_name>
+        <sys_id>9806a215db0303006bffd7a0cf961975</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Floating Holidays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_dictionary_x_125992_employee_leave_request_table_hours</sys_update_name>
+        <sys_update_name>sys_dictionary_sys_user_x_125992_employee_floating_holidays</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-12 19:46:04</sys_updated_on>
+        <sys_updated_on>2017-12-14 14:41:25</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
