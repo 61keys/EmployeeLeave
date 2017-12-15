@@ -4,9 +4,9 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>false</action_insert>
+        <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
+        <action_update>false</action_update>
         <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -19,8 +19,8 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>Accrual</name>
-        <order>100</order>
+        <name>Update PTO</name>
+        <order>102</order>
         <priority>100</priority>
         <rest_method/>
         <rest_method_text/>
@@ -29,46 +29,43 @@
         <rest_variables/>
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
 	// Add your code here
 	var gDate = new GlideDate();
 	var id = gs.getUserID();	
-	var dt = new SH_EmpTime();
+	var pt = new SH_EmpTime();
 	
 	
-	var maxHours = dt.getMaxHours(id);
-	var hD = dt.getHiredDate(id);
-	var days = dt.getDays(hD);
-	var accr = dt.getAccrual(maxHours,days);
-	var floating = dt.getFloating(id);
+	var maxHours = pt.getMaxHours(id);
+	var hD = pt.getHiredDate(id);
+	var days = pt.getDays(hD);
+	var accr = pt.getAccrual(maxHours,days);
+	var floating = pt.getFloating(id);
 	var daysReq = current.days_requested;
 	var floatingH = current.request_category;
 	
-	//dt.updateHours(id,accr,maxHours,floating,daysReq,floatingH);
-	current.hours_accrued = accr;
-	current.hours = maxHours;
-	current.usan_paid_holidays = floating;
-	
+	dt.updateHours(id,accr,maxHours,floating,daysReq,floatingH);
 	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-12-11 16:29:09</sys_created_on>
+        <sys_created_on>2017-12-15 20:11:23</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>0d98d35cdb8703006bffd7a0cf96198c</sys_id>
-        <sys_mod_count>54</sys_mod_count>
-        <sys_name>Accrual</sys_name>
+        <sys_id>670bf03ddb8b03006bffd7a0cf96193e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Update PTO</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_script_0d98d35cdb8703006bffd7a0cf96198c</sys_update_name>
+        <sys_update_name>sys_script_670bf03ddb8b03006bffd7a0cf96193e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-15 19:55:47</sys_updated_on>
+        <sys_updated_on>2017-12-15 20:13:06</sys_updated_on>
         <template/>
-        <when>before_display</when>
+        <when>after</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=0d98d35cdb8703006bffd7a0cf96198c"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=670bf03ddb8b03006bffd7a0cf96193e"/>
 </record_update>

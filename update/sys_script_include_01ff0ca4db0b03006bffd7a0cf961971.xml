@@ -24,16 +24,84 @@ SH_EmpTime.prototype = {
 		return result;
 	},
 	
+	updateHours: function(sysId,accrued,maxHours,floating,daysReq,floatingH){
+		var result='';
+		//maxHours = maxHours - daysReq;
+		
+		if(floatingH == 'Floating Holiday'){
+			floating = floating - daysReq;
+		}
+		if(floatingH == 'Vacation'){
+			maxHours = maxHours - daysReq;
+		}
+		floating = floating - daysReq;
+		var gr = new GlideRecord("sys_user");		
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			gr.x_125992_employee_max_vacation_hours = maxHours;
+			gr.x_125992_employee_accrued_vacation_hours = accrued;
+			gr.x_125992_employee_floating_holidays = floating;			
+			gr.update();
+		}
+	},
+	
+	getMaxHours: function(id){
+		var result='';
+		var gr = new GlideRecord("sys_user");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			result = gr.x_125992_employee_max_vacation_hours;
+		}
+		return result;
+	},
+	
+	getFloating: function(id){
+		var result='';
+		var gr = new GlideRecord("sys_user");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			result = gr.x_125992_employee_floating_holidays;
+		}
+		return result;
+	},
+	
 	getDays: function(str){
 		//var str = hD
 		var sgd1 = new GlideDate();
 		sgd1.getDisplayValueInternal();
+		//sgd1.setDisplayValue('2017-12-31');
 		var sgd2 = new GlideDate();
-		sgd2.setDisplayValue(str.toString());
+		//sgd2.setDisplayValue(str.toString());
+		sgd2.setDisplayValue('2017-01-01');
 		
 		duration= GlideDate.subtract(sgd2, sgd1);
-		return duration.getDisplayValue();
+		var days = duration.getDisplayValue();
+		days = this.getJustDays(days.toString());
+		//duration = this.getJustDays(duration);
+		//return duration.getDisplayValue();
+		return parseInt(days);
 		
+	},
+	
+	getAccrual:function(maxHours,days){
+		
+		var rate = maxHours/24;
+		var payperiods = Math.floor(days/15);
+		var accrual = rate * payperiods;
+		
+		return accrual;
+		
+	},
+	
+	//get the days
+	getJustDays:function(str){
+		var day = str;
+		day = day.split(" ")[0];
+		day = parseFloat(day);
+		return day;
 	},
 	
 	type: 'SH_EmpTime'
@@ -45,7 +113,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>31</sys_mod_count>
+        <sys_mod_count>50</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -53,6 +121,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-12 14:56:40</sys_updated_on>
+        <sys_updated_on>2017-12-15 19:53:03</sys_updated_on>
     </sys_script_include>
 </record_update>
