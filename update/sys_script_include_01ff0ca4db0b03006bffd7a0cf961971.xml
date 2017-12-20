@@ -24,6 +24,18 @@ SH_EmpTime.prototype = {
 		return result;
 	},
 	
+	updateTest: function(id,nm){
+		var result='';
+		var gr = new GlideRecord("x_125992_employee_leave_request_table");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			gr.comments = nm + " " + "this worked!";
+			gr.update();
+		}
+		
+	},
+	
 	updateHours: function(sysId,accrued,maxHours,floating,daysReq,floatingH){
 		var result='';
 		//maxHours = maxHours - daysReq;
@@ -113,7 +125,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -121,6 +133,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-15 19:53:03</sys_updated_on>
+        <sys_updated_on>2017-12-20 16:57:53</sys_updated_on>
     </sys_script_include>
 </record_update>

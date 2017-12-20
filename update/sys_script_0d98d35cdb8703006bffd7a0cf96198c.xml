@@ -30,7 +30,7 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	// Add your code here
-	var gDate = new GlideDate();
+	/*var gDate = new GlideDate();
 	var id = gs.getUserID();	
 	var dt = new SH_EmpTime();
 	
@@ -41,12 +41,12 @@
 	var accr = dt.getAccrual(maxHours,days);
 	var floating = dt.getFloating(id);
 	var daysReq = current.days_requested;
-	var floatingH = current.request_category;
+	//var floatingH = current.getValue(request_category);
 	
 	//dt.updateHours(id,accr,maxHours,floating,daysReq,floatingH);
 	current.hours_accrued = accr;
 	current.hours = maxHours;
-	current.usan_paid_holidays = floating;
+	current.usan_paid_holidays = floating;*/
 	
 	
 })(current, previous);]]></script>
@@ -57,7 +57,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0d98d35cdb8703006bffd7a0cf96198c</sys_id>
-        <sys_mod_count>54</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name>Accrual</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -66,7 +66,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_0d98d35cdb8703006bffd7a0cf96198c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-15 19:55:47</sys_updated_on>
+        <sys_updated_on>2017-12-18 15:31:40</sys_updated_on>
         <template/>
         <when>before_display</when>
     </sys_script>

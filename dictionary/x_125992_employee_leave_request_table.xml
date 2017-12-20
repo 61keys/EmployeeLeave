@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
     <element label="Employee Leave Request Table" max_length="40" name="x_125992_employee_leave_request_table" type="collection">
+        <element default="not requested" label="Approval" max_length="40" name="approval" type="string"/>
+        <element label="Approval history" max_length="4000" name="approval_history" type="journal"/>
+        <element label="Approval set" max_length="40" name="approval_set" type="glide_date_time"/>
         <element label="Approved" max_length="40" name="approved" type="boolean"/>
-        <element label="Approved By" max_length="32" name="approved_by" reference="sys_user" type="reference"/>
+        <element label="Approved By" max_length="32" name="approved_by" read_only="true" reference="sys_user" type="reference"/>
         <element label="Comments" max_length="2000" name="comments" type="string"/>
         <element label="Days Requested" max_length="20" name="days_requested" type="decimal"/>
         <element label="End date" max_length="40" name="end_date" type="glide_date"/>
