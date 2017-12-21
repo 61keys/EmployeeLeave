@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" type="collection">
+        <element label="Days Requested" max_length="40" name="days_requested" type="integer"/>
+        <element label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" type="decimal"/>
+        <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
+        <element label="Hours Accued" max_length="20" name="hours_accued" type="decimal"/>
+        <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
+        <element choice="1" label="PTO Request Type" max_length="40" name="pto_request_type" type="choice">
+            <choice/>
+        </element>
+    </element>
+</database>
