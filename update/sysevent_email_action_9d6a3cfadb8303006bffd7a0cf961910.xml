@@ -7,7 +7,7 @@
         <advanced_condition/>
         <affected_field_on_event/>
         <category display_value="Approval">1a9d02137f232200ee2e108c3ffa9113</category>
-        <collection>x_125992_employee_leave_request_table</collection>
+        <collection>x_125992_employee_employee_leave_request_table</collection>
         <condition/>
         <content_type>text/html</content_type>
         <description/>
@@ -47,7 +47,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9d6a3cfadb8303006bffd7a0cf961910</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Email PTO</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -56,9 +56,9 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sysevent_email_action_9d6a3cfadb8303006bffd7a0cf961910</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-18 22:41:18</sys_updated_on>
+        <sys_updated_on>2017-12-21 17:01:04</sys_updated_on>
         <sys_version>2</sys_version>
-        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <template/>
         <type>email</type>
         <weight>0</weight>
     </sysevent_email_action>

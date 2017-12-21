@@ -9,18 +9,13 @@
         </element>
         <element label="Hours Accrued" max_length="20" name="hours_accued" type="decimal"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
+        <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
         <element choice="1" label="PTO Request Type" max_length="40" name="pto_request_type" type="choice">
             <choice/>
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
         <element choice="1" label="Usan Paid Holidays" max_length="40" name="usan_paid_holidays" type="choice">
             <choice/>
-        </element>
-        <element choice="1" label="Vacation Approval" max_length="40" name="vacation_approval" type="choice">
-            <choice>
-                <element label="Approved" value="approved"/>
-                <element label="Rejected" value="rejected"/>
-            </choice>
         </element>
     </element>
 </database>
