@@ -8,7 +8,7 @@
             <choice/>
         </element>
         <element default="0" label="Friday" max_length="40" name="friday" type="decimal"/>
-        <element label="Hours Accrued" max_length="20" name="hours_accued" type="decimal"/>
+        <element label="Hours Accrued" max_length="40" name="hours_accrued" type="decimal"/>
         <element default="0" label="Monday" max_length="40" name="monday" type="decimal"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
