@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" type="collection">
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="2" type="collection">
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
         <element label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" type="decimal"/>
         <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
         <element choice="1" label="Floating Holidays" max_length="40" name="floating_holidays" type="choice">
             <choice/>
         </element>
+        <element default="0" label="Friday" max_length="40" name="friday" type="decimal"/>
         <element label="Hours Accrued" max_length="20" name="hours_accued" type="decimal"/>
+        <element default="0" label="Monday" max_length="40" name="monday" type="decimal"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
         <element choice="1" label="PTO Request Type" max_length="40" name="pto_request_type" type="choice">
             <choice/>
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
+        <element default="0" label="Saturday" max_length="40" name="saturday" type="decimal"/>
+        <element default="0" label="Sunday" max_length="40" name="sunday" type="decimal"/>
+        <element default="0" label="Thursday" max_length="40" name="thursday" type="decimal"/>
+        <element default="0" label="Total" max_length="40" name="total" type="decimal"/>
+        <element default="0" label="Tuesday" max_length="40" name="tuesday" type="decimal"/>
         <element choice="1" label="Usan Paid Holidays" max_length="40" name="usan_paid_holidays" type="choice">
             <choice/>
         </element>
+        <element default="0" label="Wednesday" max_length="40" name="wednesday" type="decimal"/>
     </element>
 </database>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="date_time_user" name="date_time_user">7f645a02bfc10100a43cbeba3f0739b9</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2017-12-21 22:58:22</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d23b5c33db4703006bffd7a0cf961982</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>7f645a02bfc10100a43cbeba3f0739b9</sys_name>
+        <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+        <sys_update_name>sys_embedded_help_role_d23b5c33db4703006bffd7a0cf961982</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-12-21 22:58:22</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
