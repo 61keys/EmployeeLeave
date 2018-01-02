@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="pto_request_type" table="x_125992_employee_employee_leave_request_table" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Company Holiday</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:56:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8dbd68abdb1303006bffd7a0cf961931</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 16:15:41</sys_updated_on>
+            <value>company_holiday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Excused Leave</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:57:28</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>07dda82fdb1303006bffd7a0cf961965</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:57:40</sys_updated_on>
+            <value>excused_leave</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Floating Holiday</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>2</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:57:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>42fd242fdb1303006bffd7a0cf9619e1</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:58:20</sys_updated_on>
+            <value>floating_holiday</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Funeral</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>3</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:58:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f01e68abdb1303006bffd7a0cf961933</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:58:39</sys_updated_on>
+            <value>funeral</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Sick Leave</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>4</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:58:46</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3c3e206fdb1303006bffd7a0cf96199f</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:58:53</sys_updated_on>
+            <value>sick_leave</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>pto_request_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Vacation</label>
+            <language>en</language>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sequence>5</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:58:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>454e206fdb1303006bffd7a0cf9619a0</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:59:08</sys_updated_on>
+            <value>vacation</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>pto_request_type</element>
+            <name>x_125992_employee_employee_leave_request_table</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-02 15:56:59</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>7edd646fdb1303006bffd7a0cf961961</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>pto_request_type</sys_name>
+            <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+            <sys_update_name>sys_choice_x_125992_employee_employee_leave_request_table_pto_request_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-02 15:56:59</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

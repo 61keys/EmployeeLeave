@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="2" type="collection">
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="3" type="collection">
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
         <element label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" type="decimal"/>
         <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
@@ -13,7 +13,14 @@
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
         <element choice="1" label="PTO Request Type" max_length="40" name="pto_request_type" type="choice">
-            <choice/>
+            <choice>
+                <element label="Company Holiday" sequence="0" value="company_holiday"/>
+                <element label="Excused Leave" sequence="1" value="excused_leave"/>
+                <element label="Floating Holiday" sequence="2" value="floating_holiday"/>
+                <element label="Funeral" sequence="3" value="funeral"/>
+                <element label="Sick Leave" sequence="4" value="sick_leave"/>
+                <element label="Vacation" sequence="5" value="vacation"/>
+            </choice>
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
         <element default="0" label="Saturday" max_length="40" name="saturday" type="decimal"/>
@@ -25,5 +32,6 @@
             <choice/>
         </element>
         <element default="0" label="Wednesday" max_length="40" name="wednesday" type="decimal"/>
+        <element label="Week Starts On" max_length="40" name="week_starts_on" type="glide_date"/>
     </element>
 </database>
