@@ -22,58 +22,7 @@ SH_EmpTime.prototype = {
 			result = gr.x_125992_employee_hired_date;
 		}
 		return result;
-	},
-	
-	updateTest: function(id,nm){
-		gs.info("This is the id:" + id);
-		gs.info("This is the name:" + nm);
-		var gr = new GlideRecord("x_125992_employee_employee_leave_request_table");
-		gr.addQuery('sys_id', id);
-		gr.query();
-		if(gr.next()){
-			gr.comments = nm + " " + "this worked!";
-			gr.update();
-			gs.error(gr.getLastErrorMessage());
-		}
-		
-	},
-	
-	updateTestScript: function(id){
-		gs.info("This is the id:" + id);
-		var gr = new GlideRecord("x_125992_employee_employee_leave_request_table");
-		gr.addQuery('sys_id', id);
-		gr.query();
-		if(gr.next()){
-			gr.pto_description = "this worked!";
-			gr.update();
-		}
-	},
-	
-	vTest:function(vr){
-	   gs.info(vr);	
-	},
-	
-	/*updateHours: function(sysId,accrued,maxHours,floating,daysReq,floatingH){
-		var result='';
-		//maxHours = maxHours - daysReq;
-		
-		if(floatingH == 'Floating Holiday'){
-			floating = floating - daysReq;
-		}
-		if(floatingH == 'Vacation'){
-			maxHours = maxHours - daysReq;
-		}
-		floating = floating - daysReq;
-		var gr = new GlideRecord("sys_user");
-		gr.addQuery('sys_id', id);
-		gr.query();
-		if(gr.next()){
-			gr.x_125992_employee_max_vacation_hours = maxHours;
-			gr.x_125992_employee_accrued_vacation_hours = accrued;
-			gr.x_125992_employee_floating_holidays = floating;
-			gr.update();
-		}
-	},*/
+	},	
 	
 	getMaxHours: function(id){
 		var result='';
@@ -87,13 +36,15 @@ SH_EmpTime.prototype = {
 	},
 	
 	updateMaxHours: function(id,total){
+		gs.debug("updateMaxHours: id: " + id + " total: " + total);
 		var result='';
 		var gr = new GlideRecord("sys_user");
 		gr.addQuery('sys_id', id);
 		gr.query();
+		gs.error("updateMaxHours", gr.getLastErrorMessage());
 		if(gr.next()){			
 			gr.x_125992_employee_max_vacation_hours = gr.x_125992_employee_max_vacation_hours - total;
-			gr.update();
+			gr.update();			
 		}		
 	},
 	
@@ -108,13 +59,13 @@ SH_EmpTime.prototype = {
 		return result;
 	},
 	
-	updateFloatingHours: function(id,total){
+	updateFloatingDays: function(id){
 		var result='';
 		var gr = new GlideRecord("sys_user");
 		gr.addQuery('sys_id', id);
-		gr.query();
+		gr.query();		
 		if(gr.next()){			
-			gr.x_125992_employee_floating_holidays = gr.x_125992_employee_floating_holidays - total;
+			gr.x_125992_employee_floating_holidays = gr.x_125992_employee_floating_holidays - 1;
 			gr.update();
 		}		
 	},
@@ -123,10 +74,10 @@ SH_EmpTime.prototype = {
 		//var str = hD
 		var sgd1 = new GlideDate();
 		sgd1.getDisplayValueInternal();
-		//sgd1.setDisplayValue('2017-12-31');
+		//sgd1.setDisplayValue('2018-01-31');
 		var sgd2 = new GlideDate();
 		//sgd2.setDisplayValue(str.toString());
-		sgd2.setDisplayValue('2017-01-01');
+		sgd2.setDisplayValue('2018-01-01');
 		
 		duration= GlideDate.subtract(sgd2, sgd1);
 		var days = duration.getDisplayValue();
@@ -156,7 +107,7 @@ SH_EmpTime.prototype = {
 	},
 	
 	addTimeCard:function(userId,weekStart,sun,mon,tues,wed,thurs,fri,sat,category,total){		
-		gs.info("This is the values:" + userId,weekStart,sun,mon,tues,wed,thurs,fri,sat,category,total);
+		gs.debug("This is the values:" + userId,weekStart,sun,mon,tues,wed,thurs,fri,sat,category,total);
 		var weekStartsOn = new GlideDate();
 		weekStartsOn.setValue(weekStart);
 		var timeSheetFactory = new global.TimeSheetFactory();
@@ -177,11 +128,31 @@ SH_EmpTime.prototype = {
 		gr.category = category;
 		gr.user = userId;
 		gr.insert();
-		//gs.error(gr.getLastErrorMessage());
-		if(category == 	'floating_holiday'){
-			this.updateFloatingHours(userId, total);
+		
+		this.updatePTO(category,total,userId);
+	},
+		
+	updatePTO:function(category,total,userId){
+		gs.debug("UpdatePTO: id: " + userId + " category: " + category + " total: " + total);
+		if(category == 'company_holiday'){
+			
+		}
+		if(category == 'excused_leave'){
+			
+		}
+		if(category == 'floating_holiday'){
+			this.updateFloatingDays(userId);
+		}
+		if(category == 'funeral'){
+			
+		}
+		if(category == 'sick_leave'){
+			
+		}
+		if(category == 'vacation'){
+			this.updateMaxHours(userId, total);
 		}		
-		this.updateMaxHours(userId, total);
+		
 	},
 	
 	type: 'SH_EmpTime'
@@ -193,7 +164,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>73</sys_mod_count>
+        <sys_mod_count>86</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -201,6 +172,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-02 22:17:55</sys_updated_on>
+        <sys_updated_on>2018-01-03 21:15:11</sys_updated_on>
     </sys_script_include>
 </record_update>

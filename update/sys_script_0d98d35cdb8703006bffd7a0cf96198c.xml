@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>false</active>
+        <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -38,7 +38,7 @@
 	var maxHours = dt.getMaxHours(id);
 	var hD = dt.getHiredDate(id);
 	var days = dt.getDays(hD);
-	current.pto_description = days;
+	//current.pto_description = days;
 	var accr = dt.getAccrual(maxHours,days);	
 	//var floating = dt.getFloating(id);
 	//var daysReq = current.days_requested;
@@ -62,7 +62,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>0d98d35cdb8703006bffd7a0cf96198c</sys_id>
-        <sys_mod_count>78</sys_mod_count>
+        <sys_mod_count>80</sys_mod_count>
         <sys_name>Accrual</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -71,7 +71,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_0d98d35cdb8703006bffd7a0cf96198c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-02 17:44:21</sys_updated_on>
+        <sys_updated_on>2018-01-03 21:13:25</sys_updated_on>
         <template/>
         <when>before_display</when>
     </sys_script>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <messages/>
+        <name>SH_GetVacationHours</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below   
+	var id = g_user.userID;
+	//alert(id);
+	var uH = new GlideAjax('SH_PTOGetDays');	
+	uH.addParam('sysparm_name', 'getVacationHours');
+	uH.addParam('sysparm_my_id', id);
+	uH.getXML(myCallBack3);
+
+	
+	function myCallBack3(response) {
+		var hours = response.responseXML.documentElement.getAttribute('answer');
+		//alert(hours);
+		//g_form.setReadonly('eligible_vacation_hours',true);
+		g_form.setValue('eligible_vacation_hours',hours);
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-03 20:25:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>53a3baffdb1f03006bffd7a0cf9619e1</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>SH_GetVacationHours</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+        <sys_update_name>sys_script_client_53a3baffdb1f03006bffd7a0cf9619e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-03 20:32:05</sys_updated_on>
+        <table>x_125992_employee_employee_leave_request_table</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

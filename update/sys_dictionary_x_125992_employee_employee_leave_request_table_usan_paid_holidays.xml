@@ -12,7 +12,7 @@
 	return '';  // return the calculated value
 
 })(current);]]></calculation>
-        <choice>3</choice>
+        <choice>1</choice>
         <choice_field/>
         <choice_table/>
         <column_label>Usan Paid Holidays</column_label>
@@ -56,7 +56,7 @@
         <sys_created_on>2017-12-21 15:00:53</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>4abd226fdb0303006bffd7a0cf9619b4</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>Usan Paid Holidays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
@@ -64,7 +64,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_dictionary_x_125992_employee_employee_leave_request_table_usan_paid_holidays</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-03 18:25:29</sys_updated_on>
+        <sys_updated_on>2018-01-03 18:54:37</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
