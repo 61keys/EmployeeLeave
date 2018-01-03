@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
     <sys_dictionary action="INSERT_OR_UPDATE" element="floating_holidays" table="x_125992_employee_employee_leave_request_table">
-        <active>false</active>
+        <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
         <attributes/>
@@ -12,13 +12,13 @@
 	return '';  // return the calculated value
 
 })(current);]]></calculation>
-        <choice/>
+        <choice>3</choice>
         <choice_field/>
         <choice_table/>
         <column_label>Floating Holidays</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>Choose a Holiday</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -56,7 +56,7 @@
         <sys_created_on>2017-12-21 15:19:46</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c327eefdb0303006bffd7a0cf961994</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Floating Holidays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
@@ -64,7 +64,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_dictionary_x_125992_employee_employee_leave_request_table_floating_holidays</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-02 17:50:08</sys_updated_on>
+        <sys_updated_on>2018-01-03 18:23:28</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

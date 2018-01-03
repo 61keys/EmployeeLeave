@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>floating_holidays</field>
+        <global>true</global>
+        <messages/>
+        <name>SH_PTOShowDaysFH</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading || newValue === '') {
+		return;
+	}
+	var fhId = g_form.getValue("floating_holidays");
+	if(fhId == 'Choose a Holiday'){
+		g_form.setReadonly('monday',false);
+		g_form.setReadonly('tuesday',false);
+		g_form.setReadonly('wednesday',false);
+		g_form.setReadonly('thursday',false);
+		g_form.setReadonly('friday',false);
+		g_form.setValue('monday',0);
+		g_form.setValue('tuesday',0);
+		g_form.setValue('wednesday',0);
+		g_form.setValue('thursday',0);
+		g_form.setValue('friday',0);
+	}else{
+		g_form.setReadonly('monday',false);
+		g_form.setReadonly('tuesday',false);
+		g_form.setReadonly('wednesday',false);
+		g_form.setReadonly('thursday',false);
+		g_form.setReadonly('friday',false);
+		g_form.setValue('monday',0);
+		g_form.setValue('tuesday',0);
+		g_form.setValue('wednesday',0);
+		g_form.setValue('thursday',0);
+		g_form.setValue('friday',0);
+		var ga2 = new GlideAjax('SH_PTOGetDays');
+		ga2.addParam('sysparm_name', 'getFloatDay');
+		ga2.addParam('sysparm_my_id', fhId);
+		ga2.getXML(myCallBack2);
+	}
+	
+	function myCallBack2(response) {
+		var day = response.responseXML.documentElement.getAttribute('answer');		
+		setFields(day);
+	}
+	
+	function setFields(day){
+		switch(day){
+			case "Monday":
+			g_form.setValue('monday', 8);
+			g_form.setReadonly('monday',true);
+			g_form.setReadonly('tuesday',true);
+			g_form.setReadonly('wednesday',true);
+			g_form.setReadonly('thursday',true);
+			g_form.setReadonly('friday',true);
+			
+			break;
+			case "Tuesday":
+			g_form.setValue('tuesday', 8);
+			g_form.setReadonly('tuesday',true);
+			g_form.setReadonly('monday',true);
+			g_form.setReadonly('wednesday',true);
+			g_form.setReadonly('thursday',true);
+			g_form.setReadonly('friday',true);
+			break;
+			case "Wednesday":
+			g_form.setValue('wednesday', 8);
+		    g_form.setReadonly('wednesday',true);
+			g_form.setReadonly('tuesday',true);
+			g_form.setReadonly('monday',true);
+			g_form.setReadonly('thursday',true);
+			g_form.setReadonly('friday',true);
+			break;
+			case "Thursday":
+			g_form.setValue('thursday', 8);
+			g_form.setReadonly('thursday',true);
+			g_form.setReadonly('tuesday',true);
+			g_form.setReadonly('wednesday',true);
+			g_form.setReadonly('monday',true);
+			g_form.setReadonly('friday',true);
+			break;
+			case "Friday":
+			g_form.setValue('friday', 8);
+			g_form.setReadonly('friday',true);	
+			g_form.setReadonly('tuesday',true);
+			g_form.setReadonly('wednesday',true);
+			g_form.setReadonly('thursday',true);
+			g_form.setReadonly('monday',true);			
+			break;
+			default:			
+			break;
+		}
+		
+	}	
+	
+	
+	//Type appropriate comment here, and begin script below
+	
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-03 16:30:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f22e7973dbdb03006bffd7a0cf961981</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>SH_PTOShowDaysFH</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+        <sys_update_name>sys_script_client_f22e7973dbdb03006bffd7a0cf961981</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-03 17:52:41</sys_updated_on>
+        <table>x_125992_employee_employee_leave_request_table</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
