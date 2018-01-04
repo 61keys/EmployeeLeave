@@ -14,12 +14,12 @@
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
         <element choice="3" default="Choose a PTO" label="PTO Request Type" mandatory="true" max_length="40" name="pto_request_type" type="choice">
             <choice>
-                <element label="Company Holiday" sequence="0" value="company_holiday"/>
-                <element label="Excused Leave" sequence="1" value="excused_leave"/>
-                <element label="Floating Holiday" sequence="2" value="floating_holiday"/>
-                <element label="Funeral" sequence="3" value="funeral"/>
-                <element label="Sick Leave" sequence="4" value="sick_leave"/>
-                <element label="Vacation" sequence="5" value="vacation"/>
+                <element label="Company Holiday" sequence="1" value="company_holiday"/>
+                <element label="Excused Leave" sequence="2" value="excused_leave"/>
+                <element label="Floating Holiday" sequence="3" value="floating_holiday"/>
+                <element label="Funeral" sequence="4" value="funeral"/>
+                <element label="Sick Leave" sequence="5" value="sick_leave"/>
+                <element label="Vacation" sequence="6" value="vacation"/>
             </choice>
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
