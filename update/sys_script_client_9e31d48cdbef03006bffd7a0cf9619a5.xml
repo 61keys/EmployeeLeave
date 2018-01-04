@@ -14,8 +14,7 @@
 	if (isLoading || newValue === '') {
 		return;
 	}
-	var vD = g_form.getValue("pto_request_type");
-	alert(vD);
+	var vD = g_form.getValue("pto_request_type");	
 	var uId = g_user.userID;
 	if (vD == "floating_holiday"){
 		var floatingday = new GlideAjax('SH_PTOGetDays');
@@ -31,7 +30,6 @@
 		}
 	}
 	
-	
 	//Type appropriate comment here, and begin script below
 	
 }]]></script>
@@ -42,7 +40,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9e31d48cdbef03006bffd7a0cf9619a5</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>SH_ValidateFloatingHours</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -51,7 +49,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_9e31d48cdbef03006bffd7a0cf9619a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-04 03:26:02</sys_updated_on>
+        <sys_updated_on>2018-01-04 12:53:30</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
