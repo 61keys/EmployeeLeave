@@ -8,44 +8,50 @@
         <field>pto_request_type</field>
         <global>true</global>
         <messages/>
-        <name>SH_PTOFields</name>
+        <name>SH_ValidateFloatingHours</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-   if (isLoading || newValue === '') {
-      return;
-   }
-	    g_form.setReadonly('monday',false);
-		g_form.setReadonly('tuesday',false);
-		g_form.setReadonly('wednesday',false);
-		g_form.setReadonly('thursday',false);
-		g_form.setReadonly('friday',false);
-		g_form.setValue('monday',0);
-		g_form.setValue('tuesday',0);
-		g_form.setValue('wednesday',0);
-		g_form.setValue('thursday',0);
-		g_form.setValue('friday',0);
-		g_form.setValue('total',0);
-
-   //Type appropriate comment here, and begin script below
-   
+	if (isLoading || newValue === '') {
+		return;
+	}
+	var vD = g_form.getValue("pto_request_type");
+	alert(vD);
+	var uId = g_user.userID;
+	if (vD == "floating_holiday"){
+		var floatingday = new GlideAjax('SH_PTOGetDays');
+		floatingday.addParam('sysparm_name', 'getFloatingDays');
+		floatingday.addParam('sysparm_my_id', uId);
+		floatingday.getXML(floatingCallBack);
+		
+	}
+	function floatingCallBack(response) {
+		var days = response.responseXML.documentElement.getAttribute('answer');		
+		if(days == 0){
+			g_form.addErrorMessage("You do not have any remaining floating holidays left. You get 3 a year");			
+		}
+	}
+	
+	
+	//Type appropriate comment here, and begin script below
+	
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-01-03 18:08:35</sys_created_on>
+        <sys_created_on>2018-01-04 03:09:45</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>97a49a7fdbdb03006bffd7a0cf961943</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>SH_PTOFields</sys_name>
+        <sys_id>9e31d48cdbef03006bffd7a0cf9619a5</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>SH_ValidateFloatingHours</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_script_client_97a49a7fdbdb03006bffd7a0cf961943</sys_update_name>
+        <sys_update_name>sys_script_client_9e31d48cdbef03006bffd7a0cf9619a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-04 02:32:40</sys_updated_on>
+        <sys_updated_on>2018-01-04 03:26:02</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_script_client">
     <sys_script_client action="INSERT_OR_UPDATE">
-        <active>false</active>
+        <active>true</active>
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
         <field>active</field>
         <global>true</global>
-        <messages/>
+        <messages>Hours have to be a value of 4 for half a day or 8 for whole day</messages>
         <name>SH_PTOValidator</name>
         <order/>
         <script><![CDATA[function onSubmit() {
@@ -18,8 +18,30 @@
 	var thurs = parseInt(g_form.getValue("thursday"));
 	var fri = parseInt(g_form.getValue("friday"));
 	
-	if( mon != 4 || mon != 8){
-		alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+	if( mon != 4 && mon != 8 && mon != 0 ){
+		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
+		return false;	
+	}
+	
+	if( tues != 4 && tues != 8 && tues != 0 ){
+		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
+		return false;	
+	}
+	if( wed != 4 && wed != 8 && wed != 0 ){
+		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
+		return false;	
+	}
+	if( thurs != 4 && thurs != 8 && thurs != 0 ){
+		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
+		return false;	
+	}
+	if( fri != 4 && fri != 8 && fri != 0 ){
+		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
+		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
 		return false;	
 	}
    
@@ -31,7 +53,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>42afe57bdb9b03006bffd7a0cf961919</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>SH_PTOValidator</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -40,7 +62,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_42afe57bdb9b03006bffd7a0cf961919</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-03 15:40:46</sys_updated_on>
+        <sys_updated_on>2018-01-04 02:44:51</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
