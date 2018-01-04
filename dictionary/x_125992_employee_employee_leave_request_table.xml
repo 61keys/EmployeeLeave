@@ -2,13 +2,13 @@
 <database>
     <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="3" type="collection">
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
-        <element label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" read_only="true" type="decimal"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var gH = new SH_EmpTime();&#13;&#10;&#9;var hours =&#9;gH.getMaxHours(id);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return hours;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" read_only="true" type="decimal" virtual="true"/>
         <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
         <element choice="3" default="Choose a Holiday" label="Floating Holidays" max_length="40" name="floating_holidays" reference="x_125992_employee_paid_holiday_schedule" reference_qual="floating_holiday=true^EQ" reference_qual_condition="floating_holiday=true^EQ" type="reference">
             <choice/>
         </element>
         <element default="0" label="Friday" max_length="40" name="friday" type="decimal"/>
-        <element label="Hours Accrued" max_length="40" name="hours_accrued" read_only="true" type="decimal"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var gDate = new GlideDate();&#13;&#10;&#9;var id = gs.getUserID();&#9;&#13;&#10;&#9;var dt = new SH_EmpTime();&#9;&#13;&#10;&#9;&#13;&#10;&#9;var maxHours = dt.getMaxHours(id);&#13;&#10;&#9;var hD = dt.getHiredDate(id);&#13;&#10;&#9;var days = dt.getDays(hD);&#9;&#13;&#10;&#9;var accr = dt.getAccrual(maxHours,days);&#9;&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;return accr;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Hours Accrued" max_length="40" name="hours_accrued" read_only="true" type="decimal" virtual="true"/>
         <element default="0" label="Monday" max_length="40" name="monday" type="decimal"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
