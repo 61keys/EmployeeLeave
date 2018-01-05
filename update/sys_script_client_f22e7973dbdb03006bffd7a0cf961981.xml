@@ -37,6 +37,12 @@
 		g_form.setValue('wednesday',0);
 		g_form.setValue('thursday',0);
 		g_form.setValue('friday',0);
+		
+		var ga3 = new GlideAjax('SH_PTOGetDays');
+		ga3.addParam('sysparm_name', 'getFloatDate');
+		ga3.addParam('sysparm_my_id', fhId);
+		ga3.getXML(getTheDate);
+		
 		var ga2 = new GlideAjax('SH_PTOGetDays');
 		ga2.addParam('sysparm_name', 'getFloatDay');
 		ga2.addParam('sysparm_my_id', fhId);
@@ -47,6 +53,11 @@
 		var day = response.responseXML.documentElement.getAttribute('answer');		
 		setFields(day);
 	}
+	
+	function getTheDate(response) {
+		var fDate = response.responseXML.documentElement.getAttribute('answer');		
+		g_form.setValue('week_starts_on',fDate);		
+	}	
 	
 	function setFields(day){
 		switch(day){
@@ -108,7 +119,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f22e7973dbdb03006bffd7a0cf961981</sys_id>
-        <sys_mod_count>20</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>SH_PTOShowDaysFH</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -117,7 +128,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_f22e7973dbdb03006bffd7a0cf961981</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-03 17:52:41</sys_updated_on>
+        <sys_updated_on>2018-01-05 20:11:40</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
