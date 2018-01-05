@@ -32,12 +32,12 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-01-05 17:28:32</sys_created_on>
         <sys_id>8d9fdc60dba303006bffd7a0cf96193e</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-05 17:34:37</sys_updated_on>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>abel.tuter</sys_updated_by>
+        <sys_updated_on>2018-01-05 17:35:37</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <timezone/>
-        <validated>false</validated>
+        <validated>true</validated>
         <workflow display_value="USAN PTO">63657a63db4303006bffd7a0cf961986</workflow>
     </wf_workflow_version>
     <wf_workflow action="INSERT_OR_UPDATE">

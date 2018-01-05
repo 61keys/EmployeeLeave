@@ -9,7 +9,7 @@
         <name>SH_PTOGetDays</name>
         <script><![CDATA[var SH_PTOGetDays = Class.create();
 SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
-    
+	
 	getFloatDay: function(){
 		var fhId = this.getParameter('sysparm_my_id');
 		var t = '';
@@ -17,11 +17,24 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gr.addQuery('sys_id', fhId);
 		gr.query();
 		while (gr.next()) {
-		 t = gr.day_of_week;			
-		}	
+			t = gr.day_of_week;
+		}
 		return t;
 		
-	},	
+	},
+	
+	getFloatDate: function(){
+		var fhId = this.getParameter('sysparm_my_id');
+		var t = '';
+		var gr = new GlideRecord('x_125992_employee_paid_holiday_schedule');
+		gr.addQuery('sys_id', fhId);
+		gr.query();
+		while (gr.next()) {				
+			t = this.coreWeek(gr.holiday_date);			
+		}
+		return t;
+		
+	},
 	
 	
 	getVacationHours: function(){
@@ -31,8 +44,8 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gr.addQuery('sys_id', id);
 		gr.query();
 		while (gr.next()) {
-		 t = gr.x_125992_employee_max_vacation_hours;			
-		}	
+			t = gr.x_125992_employee_max_vacation_hours;
+		}
 		return t;
 		
 	},
@@ -44,20 +57,30 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gr.addQuery('sys_id', id);
 		gr.query();
 		while (gr.next()) {
-		 t = gr.x_125992_employee_floating_holidays;			
-		}	
+			t = gr.x_125992_employee_floating_holidays;
+		}
 		return t;
 		
 	},
 	
-    type: 'SH_PTOGetDays'
+	coreWeek:function(days){		
+		var floatDate = days;
+		var gd = new GlideDateTime();		
+		gd.setValue(floatDate);
+		var day = gd.getDayOfWeekUTC();
+		gd.addDaysUTC(-day);	
+		gd.setGlideDateTime(gd);
+		return gd.getDate();
+	},
+	
+	type: 'SH_PTOGetDays'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-01-03 16:56:26</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>d2e48677dbdb03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>SH_PTOGetDays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -65,6 +88,6 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_d2e48677dbdb03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-04 03:15:03</sys_updated_on>
+        <sys_updated_on>2018-01-05 20:00:54</sys_updated_on>
     </sys_script_include>
 </record_update>
