@@ -31,12 +31,13 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here	
-	var expectedWeekStartDay = 0;
+	var expectedWeekStartDay = 7;//Sunday
 	
 	var weekStarts = current.getValue("week_starts_on");
 	var gd = new GlideDate();
 	gd.setValue(weekStarts);
 	var actualWeekStartDay = gd.getDayOfWeekUTC();
+	//current.pto_description = actualWeekStartDay;
 	
 	if (actualWeekStartDay != expectedWeekStartDay) {
 		gs.addErrorMessage("Week start day has been set to Sunday in the time sheet policy");
@@ -51,7 +52,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>55dccc0cdbef03006bffd7a0cf961952</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Validate Week Start PTO</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -60,7 +61,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_55dccc0cdbef03006bffd7a0cf961952</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-04 03:02:33</sys_updated_on>
+        <sys_updated_on>2018-01-04 14:44:16</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

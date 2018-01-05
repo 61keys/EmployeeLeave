@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="3" type="collection">
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="2" type="collection">
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var gH = new SH_EmpTime();&#13;&#10;&#9;var hours =&#9;gH.getMaxHours(id);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return hours;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" read_only="true" type="decimal" virtual="true"/>
         <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
