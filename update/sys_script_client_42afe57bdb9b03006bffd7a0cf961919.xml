@@ -17,6 +17,7 @@
 	var wed = parseInt(g_form.getValue("wednesday"));
 	var thurs = parseInt(g_form.getValue("thursday"));
 	var fri = parseInt(g_form.getValue("friday"));
+	var pto = g_form.getValue('pto_request_type');
 	
 	if( mon != 4 && mon != 8 && mon != 0 ){
 		//alert("Hours have to be a value of 4 for half a day or 8 for whole day");
@@ -44,6 +45,10 @@
 		g_form.addErrorMessage("Hours have to be a value of 4 for half day or 8 for whole day");
 		return false;	
 	}
+	if(pto == 'Choose a PTO'){
+		g_form.addErrorMessage("You must select a PTO Request Category");
+		return false;
+	}
    
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -53,7 +58,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>42afe57bdb9b03006bffd7a0cf961919</sys_id>
-        <sys_mod_count>19</sys_mod_count>
+        <sys_mod_count>21</sys_mod_count>
         <sys_name>SH_PTOValidator</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -62,7 +67,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_42afe57bdb9b03006bffd7a0cf961919</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-04 02:44:51</sys_updated_on>
+        <sys_updated_on>2018-01-08 22:48:56</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
