@@ -24,10 +24,10 @@
 		
 	}
 	if (vD == "company_holiday"){
-		var floatingday = new GlideAjax('SH_PTOGetDays');
-		floatingday.addParam('sysparm_name', 'getVacationHours');
-		floatingday.addParam('sysparm_my_id', uId);
-		floatingday.getXML(companyCallBack);
+		var usanpaidday = new GlideAjax('SH_PTOGetDays');
+		usanpaidday.addParam('sysparm_name', 'getCompanyHours');
+		usanpaidday.addParam('sysparm_my_id', uId);
+		usanpaidday.getXML(companyCallBack);
 		
 	}
 	function floatingCallBack(response) {
@@ -40,7 +40,7 @@
 	function companyCallBack(response) {
 		var days = response.responseXML.documentElement.getAttribute('answer');		
 		if(days == 0){
-			g_form.addErrorMessage("You do not have any remaining PTO Hours.");	
+			g_form.addErrorMessage("You do not have any remaining Holiday Hours.");	
 			g_form.setDisabled('usan_paid_holidays',true);
 		}
 	}
@@ -56,7 +56,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9e31d48cdbef03006bffd7a0cf9619a5</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>SH_ValidateFloatingVacationHours</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -65,7 +65,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_9e31d48cdbef03006bffd7a0cf9619a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-05 20:21:44</sys_updated_on>
+        <sys_updated_on>2018-01-08 20:07:43</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
