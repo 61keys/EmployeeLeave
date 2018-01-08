@@ -151,10 +151,35 @@ SH_EmpTime.prototype = {
 		gr.state = "Approved";
 		gr.category = category;
 		gr.user = userId;
-		gr.insert();
-		var tId = gr.insert();
+		var tId = gr.insert();		
 		
 		this.updatePTO(category,total,userId);
+		
+		return tId;
+	},
+	
+	addNonPTOTimeCard:function(userId,weekStart,sun,mon,tues,wed,thurs,fri,sat,category,total){
+		gs.info("In addTimeCard : sysid: " + userId + " weekStart: " + weekStart + ' days: ' +sun,mon,tues,wed,thurs,fri,sat,category,total);
+		var weekStartsOn = new GlideDate();
+		weekStartsOn.setValue(weekStart);
+		var timeSheetFactory = new global.TimeSheetFactory();
+		var	timeSheetId = timeSheetFactory.getTimeSheet(userId, weekStartsOn);
+		var gr = new GlideRecord('time_card');
+		gr.initialize();
+		gr.setValue('user', userId);
+		gr.setValue('week_starts_on', weekStartsOn);
+		gr.setValue('time_sheet', timeSheetId);
+		gr.sunday = sun;
+		gr.monday = mon;
+		gr.tuesday = tues;
+		gr.wednesday = wed;
+		gr.thursday = thurs;
+		gr.friday = fri;
+		gr.sat = sat;
+		gr.state = "Approved";
+		gr.category = category;
+		gr.user = userId;
+		var tId = gr.insert();			
 		
 		return tId;
 	},
@@ -188,7 +213,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>107</sys_mod_count>
+        <sys_mod_count>109</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -196,6 +221,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-08 20:18:48</sys_updated_on>
+        <sys_updated_on>2018-01-08 22:22:42</sys_updated_on>
     </sys_script_include>
 </record_update>
