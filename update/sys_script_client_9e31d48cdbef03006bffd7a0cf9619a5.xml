@@ -30,6 +30,13 @@
 		usanpaidday.getXML(companyCallBack);
 		
 	}
+	if (vD == "vacation"){
+		var usanptodday = new GlideAjax('SH_PTOGetDays');
+		usanptodday.addParam('sysparm_name', 'getRemainVacationHours');
+		usanptodday.addParam('sysparm_my_id', uId);
+		usanptodday.getXML(ptoCallBack);
+		
+	}
 	function floatingCallBack(response) {
 		var days = response.responseXML.documentElement.getAttribute('answer');		
 		if(days == 0){
@@ -38,12 +45,46 @@
 		}
 	}
 	function companyCallBack(response) {
-		var days = response.responseXML.documentElement.getAttribute('answer');		
-		if(days == 0){
+		var cdays = response.responseXML.documentElement.getAttribute('answer');		
+		if(cdays == 0){
 			g_form.addErrorMessage("You do not have any remaining Holiday Hours.");	
 			g_form.setDisabled('usan_paid_holidays',true);
 		}
 	}
+	function ptoCallBack(response) {
+		var ptodays = response.responseXML.documentElement.getAttribute('answer');		
+		if(ptodays == 0){
+			g_form.addErrorMessage("You do not have any remaining PTO Hours. This option will be disabled for this session");	
+			//g_form.setDisabled('usan_paid_holidays',true);
+			// g_form.removeOption('pto_request_type', 'vacation');
+			var pto = 'pto_request_type';
+			var vac = 'vacation';
+			disableOption(pto,vac)
+		}
+	}
+
+function disableOption(fieldName, choiceValue) {
+   fieldName = g_form.removeCurrentPrefix(fieldName);
+   var control = g_form.getControl(fieldName);
+   if (control && !control.options) {
+      var name = 'sys_select.' + this.tableName + '.' + fieldName;
+      control = gel(name);
+   }
+   if (!control)
+      return;
+
+   if (!control.options)
+      return;
+
+   var options = control.options;
+   for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      if (option.value == choiceValue) {
+         control.options[i].disabled = 'true';
+         break;
+      }
+   }
+}
 	
 	
 	//Type appropriate comment here, and begin script below
@@ -56,7 +97,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>9e31d48cdbef03006bffd7a0cf9619a5</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>SH_ValidateFloatingVacationHours</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -65,7 +106,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_9e31d48cdbef03006bffd7a0cf9619a5</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-08 20:07:43</sys_updated_on>
+        <sys_updated_on>2018-01-10 21:25:51</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

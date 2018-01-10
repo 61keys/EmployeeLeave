@@ -26,6 +26,7 @@
 		g_form.setValue('thursday',0);
 		g_form.setValue('friday',0);
 		g_form.setValue('total',0);
+	    g_form.setValue('all_week' , false);		
 
    //Type appropriate comment here, and begin script below
    
@@ -37,7 +38,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>97a49a7fdbdb03006bffd7a0cf961943</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>SH_PTOFields</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -46,7 +47,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_97a49a7fdbdb03006bffd7a0cf961943</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-05 20:06:40</sys_updated_on>
+        <sys_updated_on>2018-01-10 21:11:12</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

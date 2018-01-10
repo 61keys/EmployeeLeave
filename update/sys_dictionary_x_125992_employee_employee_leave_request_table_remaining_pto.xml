@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="" table="x_125992_employee_employee_leave_request_table">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="remaining_pto" table="x_125992_employee_employee_leave_request_table">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
         <attributes/>
         <audit>false</audit>
         <calculation><![CDATA[(function calculatedFieldValue(current) {
-
+	var rPTO = new SH_EmpTime();
+	var id = gs.getUserID();
+	rPTO.getRemianingPTO(id);
 	// Add your code here
-	return '';  // return the calculated value
-
+	return rPTO.getRemianingPTO(id);  // return the calculated value
 })(current);]]></calculation>
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label/>
+        <column_label>Remaining PTO</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -28,16 +29,16 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element/>
+        <element>remaining_pto</element>
         <element_reference>false</element_reference>
         <foreign_database/>
-        <internal_type display_value="Collection">collection</internal_type>
+        <internal_type display_value="Integer">integer</internal_type>
         <mandatory>false</mandatory>
         <max_length>40</max_length>
         <name>x_125992_employee_employee_leave_request_table</name>
         <next_element/>
         <primary>false</primary>
-        <read_only>false</read_only>
+        <read_only>true</read_only>
         <read_roles/>
         <reference/>
         <reference_cascade_rule/>
@@ -46,30 +47,30 @@
         <reference_qual/>
         <reference_qual_condition/>
         <reference_type/>
-        <sizeclass>1</sizeclass>
+        <sizeclass/>
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-12-21 14:38:44</sys_created_on>
+        <sys_created_on>2018-01-10 21:07:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>67d82eabdb0303006bffd7a0cf96190a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_125992_employee_employee_leave_request_table</sys_name>
+        <sys_id>b681038edba303006bffd7a0cf96194e</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Remaining PTO</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_dictionary_x_125992_employee_employee_leave_request_table_null</sys_update_name>
+        <sys_update_name>sys_dictionary_x_125992_employee_employee_leave_request_table_remaining_pto</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-21 14:38:44</sys_updated_on>
+        <sys_updated_on>2018-01-10 21:08:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
         <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
-        <virtual>false</virtual>
+        <virtual>true</virtual>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>
