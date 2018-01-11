@@ -2,8 +2,7 @@
 <record_update sys_domain="global" table="sys_ui_policy">
     <sys_ui_policy action="INSERT_OR_UPDATE">
         <active>false</active>
-        <conditions table="sys_user">roles=x_125992_employee.admin^ORroles=admin^EQ<item endquery="false" field="roles" goto="false" newquery="false" operator="=" or="false" value="x_125992_employee.admin"/>
-            <item endquery="false" field="roles" goto="false" newquery="false" operator="=" or="true" value="admin"/>
+        <conditions table="sys_user">roles=admin^EQ<item endquery="false" field="roles" goto="false" newquery="false" operator="=" or="false" value="admin"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </conditions>
         <description/>
@@ -22,24 +21,24 @@
 
 }]]></script_true>
         <set_values/>
-        <short_description>Read only for User except Employee PTO Admin</short_description>
+        <short_description>Make User View Fields Readonly</short_description>
         <sys_class_name>sys_ui_policy</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-01-10 16:13:55</sys_created_on>
+        <sys_created_on>2018-01-11 03:36:15</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>f71ef9c6db2303006bffd7a0cf961932</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>Read only for User except Employee PTO Admin</sys_name>
+        <sys_id>187ad49adb6703006bffd7a0cf961931</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Make User View Fields Readonly</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_ui_policy_f71ef9c6db2303006bffd7a0cf961932</sys_update_name>
+        <sys_update_name>sys_ui_policy_187ad49adb6703006bffd7a0cf961931</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-10 21:53:56</sys_updated_on>
+        <sys_updated_on>2018-01-11 03:48:10</sys_updated_on>
         <table>sys_user</table>
         <ui_type>0</ui_type>
         <view/>
