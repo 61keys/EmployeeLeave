@@ -34,6 +34,6 @@
             <choice/>
         </element>
         <element default="0" label="Wednesday" max_length="40" name="wednesday" type="decimal"/>
-        <element label="Week Starts On" mandatory="true" max_length="40" name="week_starts_on" type="glide_date"/>
+        <element label="Week Starts On" max_length="40" name="week_starts_on" read_only="true" type="glide_date"/>
     </element>
 </database>
