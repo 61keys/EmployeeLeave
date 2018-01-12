@@ -16,7 +16,7 @@
 	}
 	var fhId = g_form.getValue("floating_holidays");
 	if(fhId == 'Choose a Holiday'){
-		_form.setReadonly('monday',false);
+		g_form.setReadonly('monday',false);
 		g_form.setReadonly('tuesday',false);
 		g_form.setReadonly('wednesday',false);
 		g_form.setReadonly('thursday',false);
@@ -31,7 +31,7 @@
 		g_form.setValue('saturday',0);
 		g_form.setValue('sunday',0);
 	}else{
-		_form.setReadonly('monday',false);
+		g_form.setReadonly('monday',false);
 		g_form.setReadonly('tuesday',false);
 		g_form.setReadonly('wednesday',false);
 		g_form.setReadonly('thursday',false);
@@ -136,7 +136,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f22e7973dbdb03006bffd7a0cf961981</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>SH_PTOShowDaysFH</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -145,7 +145,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_f22e7973dbdb03006bffd7a0cf961981</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-12 19:19:00</sys_updated_on>
+        <sys_updated_on>2018-01-12 20:02:23</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

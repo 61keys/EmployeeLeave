@@ -25,8 +25,8 @@
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var rPTO = new SH_EmpTime();&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;rPTO.getRemianingPTO(id);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return rPTO.getRemianingPTO(id);  // return the calculated value&#13;&#10;})(current);" label="Remaining PTO" max_length="40" name="remaining_pto" read_only="true" type="integer" virtual="true"/>
-        <element label="Saturday" max_length="20" name="saturday" type="decimal"/>
-        <element label="Sunday" max_length="20" name="sunday" type="decimal"/>
+        <element default="0" label="Saturday" max_length="20" name="saturday" type="decimal"/>
+        <element default="0" label="Sunday" max_length="20" name="sunday" type="decimal"/>
         <element default="0" label="Thursday" max_length="40" name="thursday" type="decimal"/>
         <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="0" label="Total" max_length="40" name="total" read_only="true" type="decimal"/>
         <element default="0" label="Tuesday" max_length="40" name="tuesday" type="decimal"/>
