@@ -5,58 +5,53 @@
         <applies_extended>false</applies_extended>
         <condition/>
         <description/>
-        <field>all_week</field>
+        <field>sunday</field>
         <global>true</global>
         <messages/>
-        <name>SH_SelectAllWeek</name>
+        <name>SH_AddPTOHoursSun</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
    if (isLoading || newValue === '') {
       return;
    }
-	
-	var bool = g_form.getValue("all_week");	
-	if(bool == 'true')
-		{
-			g_form.setValue('monday', 8);
-			g_form.setValue('tuesday', 8);
-			g_form.setValue('wednesday', 8);
-			g_form.setValue('thursday', 8);
-			g_form.setValue('friday', 8);
-			g_form.setValue('saturday', 8);
-			g_form.setValue('sunday', 8);
-		}else{
-			g_form.setValue('monday', 0);
-			g_form.setValue('tuesday', 0);
-			g_form.setValue('wednesday', 0);
-			g_form.setValue('thursday', 0);
-			g_form.setValue('friday', 0);
-			g_form.setValue('saturday', 0);
-			g_form.setValue('sunday', 0);
-			g_form.setValue('total', 0);
-		}
-	
+    
+   	var fri = parseInt(g_form.getValue("sunday"));
+	if(fri != 0){
+		calc();
+	}
+}
 
-   //Type appropriate comment here, and begin script below
-   
-}]]></script>
+   function calc(){
+	   
+	   var sun = parseInt(g_form.getValue("sunday"));
+	   var mon = parseInt(g_form.getValue("monday"));
+	   var tues = parseInt(g_form.getValue("tuesday"));
+	   var wed = parseInt(g_form.getValue("wednesday"));
+	   var thurs = parseInt(g_form.getValue("thursday"));
+	   var fri = parseInt(g_form.getValue("friday"));
+	   var sat = parseInt(g_form.getValue("saturday"));
+	   
+	var total = mon + tues + wed + thurs + fri + sat + sun;
+	    g_form.setValue("total",total);	  
+   }
+]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-01-10 19:50:12</sys_created_on>
+        <sys_created_on>2018-01-12 19:09:36</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>456faec2dba303006bffd7a0cf961938</sys_id>
-        <sys_mod_count>6</sys_mod_count>
-        <sys_name>SH_SelectAllWeek</sys_name>
+        <sys_id>cda9f0fadb6303006bffd7a0cf961902</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SH_AddPTOHoursSun</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sys_script_client_456faec2dba303006bffd7a0cf961938</sys_update_name>
+        <sys_update_name>sys_script_client_cda9f0fadb6303006bffd7a0cf961902</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-12 19:22:25</sys_updated_on>
+        <sys_updated_on>2018-01-12 19:09:36</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

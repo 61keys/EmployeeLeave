@@ -11,27 +11,29 @@
         <name>SH_AddPTOHoursFri</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-   if (isLoading || newValue === '') {
-      return;
-   }
-    
-   	var fri = parseInt(g_form.getValue("friday"));
+	if (isLoading || newValue === '') {
+		return;
+	}
+	
+	var fri = parseInt(g_form.getValue("friday"));
 	if(fri != 0){
 		calc();
 	}
 }
 
-   function calc(){
-	  
-	   var mon = parseInt(g_form.getValue("monday"));
-	   var tues = parseInt(g_form.getValue("tuesday"));
-	   var wed = parseInt(g_form.getValue("wednesday"));
-	   var thurs = parseInt(g_form.getValue("thursday"));
-	   var fri = parseInt(g_form.getValue("friday"));
-	   
-	var total = mon + tues + wed + thurs + fri;
-	    g_form.setValue("total",total);	  
-   }
+function calc(){
+	
+	var sun = parseInt(g_form.getValue("sunday"));
+	var mon = parseInt(g_form.getValue("monday"));
+	var tues = parseInt(g_form.getValue("tuesday"));
+	var wed = parseInt(g_form.getValue("wednesday"));
+	var thurs = parseInt(g_form.getValue("thursday"));
+	var fri = parseInt(g_form.getValue("friday"));
+	var sat = parseInt(g_form.getValue("saturday"));
+	
+	var total = mon + tues + wed + thurs + fri + sat + sun;
+	g_form.setValue("total",total);
+}
 ]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
@@ -40,7 +42,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>167321f3db9b03006bffd7a0cf961975</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>SH_AddPTOHoursFri</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -49,7 +51,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_167321f3db9b03006bffd7a0cf961975</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-03 14:31:12</sys_updated_on>
+        <sys_updated_on>2018-01-12 19:11:40</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

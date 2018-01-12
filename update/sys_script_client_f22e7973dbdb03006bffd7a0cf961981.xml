@@ -16,27 +16,35 @@
 	}
 	var fhId = g_form.getValue("floating_holidays");
 	if(fhId == 'Choose a Holiday'){
-		g_form.setReadonly('monday',false);
+		_form.setReadonly('monday',false);
 		g_form.setReadonly('tuesday',false);
 		g_form.setReadonly('wednesday',false);
 		g_form.setReadonly('thursday',false);
 		g_form.setReadonly('friday',false);
+		g_form.setReadonly('saturday',false);
+		g_form.setReadonly('sunday',false);
 		g_form.setValue('monday',0);
 		g_form.setValue('tuesday',0);
 		g_form.setValue('wednesday',0);
 		g_form.setValue('thursday',0);
 		g_form.setValue('friday',0);
+		g_form.setValue('saturday',0);
+		g_form.setValue('sunday',0);
 	}else{
-		g_form.setReadonly('monday',false);
+		_form.setReadonly('monday',false);
 		g_form.setReadonly('tuesday',false);
 		g_form.setReadonly('wednesday',false);
 		g_form.setReadonly('thursday',false);
 		g_form.setReadonly('friday',false);
+		g_form.setReadonly('saturday',false);
+		g_form.setReadonly('sunday',false);
 		g_form.setValue('monday',0);
 		g_form.setValue('tuesday',0);
 		g_form.setValue('wednesday',0);
 		g_form.setValue('thursday',0);
 		g_form.setValue('friday',0);
+		g_form.setValue('saturday',0);
+		g_form.setValue('sunday',0);
 		
 		var ga3 = new GlideAjax('SH_PTOGetDays');
 		ga3.addParam('sysparm_name', 'getFloatDate');
@@ -68,7 +76,8 @@
 			g_form.setReadonly('wednesday',true);
 			g_form.setReadonly('thursday',true);
 			g_form.setReadonly('friday',true);
-			
+			g_form.setReadonly('saturday',true);
+			g_form.setReadonly('sunday',true);				
 			break;
 			case "Tuesday":
 			g_form.setValue('tuesday', 8);
@@ -77,6 +86,8 @@
 			g_form.setReadonly('wednesday',true);
 			g_form.setReadonly('thursday',true);
 			g_form.setReadonly('friday',true);
+			g_form.setReadonly('saturday',true);
+			g_form.setReadonly('sunday',true);
 			break;
 			case "Wednesday":
 			g_form.setValue('wednesday', 8);
@@ -85,6 +96,8 @@
 			g_form.setReadonly('monday',true);
 			g_form.setReadonly('thursday',true);
 			g_form.setReadonly('friday',true);
+			g_form.setReadonly('saturday',true);
+			g_form.setReadonly('sunday',true);
 			break;
 			case "Thursday":
 			g_form.setValue('thursday', 8);
@@ -93,6 +106,8 @@
 			g_form.setReadonly('wednesday',true);
 			g_form.setReadonly('monday',true);
 			g_form.setReadonly('friday',true);
+			g_form.setReadonly('saturday',true);
+			g_form.setReadonly('sunday',true);
 			break;
 			case "Friday":
 			g_form.setValue('friday', 8);
@@ -100,7 +115,9 @@
 			g_form.setReadonly('tuesday',true);
 			g_form.setReadonly('wednesday',true);
 			g_form.setReadonly('thursday',true);
-			g_form.setReadonly('monday',true);			
+			g_form.setReadonly('monday',true);
+			g_form.setReadonly('saturday',true);
+			g_form.setReadonly('sunday',true);
 			break;
 			default:			
 			break;
@@ -119,7 +136,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f22e7973dbdb03006bffd7a0cf961981</sys_id>
-        <sys_mod_count>21</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>SH_PTOShowDaysFH</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -128,7 +145,7 @@
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_f22e7973dbdb03006bffd7a0cf961981</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-05 20:11:40</sys_updated_on>
+        <sys_updated_on>2018-01-12 19:19:00</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
