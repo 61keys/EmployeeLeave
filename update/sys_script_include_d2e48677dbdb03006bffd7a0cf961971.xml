@@ -100,6 +100,33 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		return gd.getDate();
 	},
 	
+	setWeekDate:function(){
+		var wStart = this.getParameter('sysparm_my_start');
+		var newDate = this.coreWeek(wStart);	
+		return newDate;		
+	},
+	
+	validateWeek:function(){
+		
+		var wStart = this.getParameter('sysparm_my_start');
+		var wEnd = this.getParameter('sysparm_my_end');
+				
+		var sgd1 = new GlideDateTime();
+		sgd1.setDisplayValue(wStart);
+		var sgd2 = new GlideDateTime();
+		sgd2.setDisplayValue(wEnd);
+		var dur= GlideDate.subtract(sgd1, sgd2);	
+	
+		return this.getJustDays(dur.getDisplayValue());
+	},
+	
+	getJustDays:function(str){
+		var day = str;
+		day = day.split(" ")[0];
+		//day = parseInt(day);
+		return day;
+	},
+	
 	type: 'SH_PTOGetDays'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
@@ -107,7 +134,7 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_on>2018-01-03 16:56:26</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>d2e48677dbdb03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>45</sys_mod_count>
         <sys_name>SH_PTOGetDays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -115,6 +142,6 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_d2e48677dbdb03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-12 20:09:57</sys_updated_on>
+        <sys_updated_on>2018-01-15 13:53:28</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -12,6 +12,57 @@ SH_EmpTime.prototype = {
 	initialize: function() {
 	},
 	
+	resetAll2:function(){
+		/*
+		var grUser = new GlideRecord("sys_user");
+		grUser.addActiveQuery();
+		grUser.query();
+		while (grUser.next()) {
+			if (grUser.x_125992_employee_max_vacation_hours != 0) {
+				var gDate = new GlideDate();
+				var id = grUser.sys_id;
+				var dt = new x_125992_employee.SH_EmpTime();
+				var maxHours = dt.getMaxHours(id);
+				var days = dt.getDays();
+				var accr = dt.getAccrual(maxHours,days);
+				dt.updateAccruedHours(id,accr);
+				gs.print(grUser.name + " " + accr)
+				
+			}
+		}
+		
+		var grUser = new GlideRecord("sys_user");
+		grUser.addActiveQuery();
+		grUser.query();
+		while (grUser.next()) {
+			if (grUser.x_125992_employee_max_vacation_hours != 0) {
+				grUser.x_125992_employee_accrued_vacation_hours = 0
+				grUser.update();
+			}
+		}
+		
+		
+ 		*/
+	},
+	
+	resetAll:function(){		
+		var grUser = new GlideRecord("sys_user");
+		//grUser.addActiveQuery();
+		grUser.query();
+		while (grUser.next()) {
+			if (grUser.x_125992_employee_max_vacation_hours != 0) {
+				grUser.x_125992_employee_remaning_pto_hours = grUser.x_125992_employee_max_vacation_hours;
+				grUser.x_125992_employee_accrued_vacation_hours = 0;
+				grUser.x_125992_employee_floating_holidays = 3;
+				grUser.x_125992_employee_company_holidays = 8;
+				grUser.update();
+			}
+		}
+		
+		
+ 		
+	},
+	
 	getEmpId: function(userName){
 		var usersysid = '';
 		var t = new GlideRecord('sys_user');
@@ -85,7 +136,7 @@ SH_EmpTime.prototype = {
 		}
 	},
 	
-	getRemianingPTO: function(id){		
+	getRemianingPTO: function(id){
 		var result= 0;
 		var gr = new GlideRecord("sys_user");
 		gr.addQuery('sys_id', id);
@@ -128,11 +179,31 @@ SH_EmpTime.prototype = {
 		//sgd1.setDisplayValue('2018-06-30');
 		var sgd2 = new GlideDate();
 		var glideYear = sgd2.getYearNoTZ();
-		glideYear = glideYear + "-01-01";		
-		sgd2.setDisplayValue(glideYear);		
+		glideYear = glideYear + "-01-01";
+		sgd2.setDisplayValue(glideYear);
 		duration= GlideDate.subtract(sgd2, sgd1);
 		var days = duration.getDisplayValue();
-		days = this.getJustDays(days.toString());		
+		days = this.getJustDays(days.toString());
+		return parseInt(days);
+	},
+	
+	validateStart:function(start,end){
+		var gdt1 = new GlideDateTime(start);
+		var gdt2 = new GlideDateTime(end);
+		//gs.addInfoMessage("is on " + gdt1.onOrAfter(gdt2));
+		//gs.addInfoMessage("is after " + gdt1.onOrBefore(gdt2));
+		return gdt1.onOrAfter(gdt2);
+	},
+	
+	getDaysTime: function(wStart,wEnd){				
+		var sgd1 = new GlideDateTime();
+		sgd1.setDisplayValue(wStart.toString());
+		var sgd2 = new GlideDateTime();
+		sgd2.setDisplayValue(wEnd.toString());
+		var days= GlideDateTime.subtract(sgd1, sgd2);		
+		//days = this.getJustDays(days.getDisplayValue());
+		days = 0;
+		
 		return parseInt(days);
 	},
 	
@@ -151,7 +222,7 @@ SH_EmpTime.prototype = {
 		gr.addQuery('sys_id', id);
 		gr.query();
 		if(gr.next()){
-			accrual = gr.x_125992_employee_accrued_vacation_hours;			
+			accrual = gr.x_125992_employee_accrued_vacation_hours;
 		}
 		
 		return accrual;
@@ -186,7 +257,7 @@ SH_EmpTime.prototype = {
 		gr.state = "Approved";
 		gr.category = category;
 		gr.user = userId;
-		var tId = gr.insert();		
+		var tId = gr.insert();
 		
 		this.updatePTO(category,total,userId);
 		
@@ -214,7 +285,7 @@ SH_EmpTime.prototype = {
 		gr.state = "Approved";
 		gr.category = category;
 		gr.user = userId;
-		var tId = gr.insert();			
+		var tId = gr.insert();
 		
 		return tId;
 	},
@@ -248,7 +319,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>127</sys_mod_count>
+        <sys_mod_count>149</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -256,6 +327,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-10 21:41:39</sys_updated_on>
+        <sys_updated_on>2018-01-15 14:23:33</sys_updated_on>
     </sys_script_include>
 </record_update>
