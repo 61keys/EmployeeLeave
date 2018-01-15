@@ -4,7 +4,7 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>paid_holidays</element>
-            <list_id display_value="x_125992_employee_paid_holiday_schedule" element="NULL" name="x_125992_employee_paid_holiday_schedule" parent="NULL" relationship="NULL" sys_domain="global" view="b24417619422320092c0d40a7bef4629">3d40c9e7db5303006bffd7a0cf961921</list_id>
+            <list_id display_value="x_125992_employee_paid_holiday_schedule" element="NULL" name="x_125992_employee_paid_holiday_schedule" parent="NULL" relationship="NULL" sys_domain="global" view="2f031530db1212009f6831dabf96195d">3d40c9e7db5303006bffd7a0cf961921</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
@@ -43,7 +43,7 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2018-01-02 17:17:28</sys_updated_on>
             <sys_user/>
-            <view display_value="Reference List" name="sys_ref_list">b24417619422320092c0d40a7bef4629</view>
+            <view display_value="Reference List" name="sys_ref_list">2f031530db1212009f6831dabf96195d</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="1" type="collection">
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="2" type="collection">
         <element label="All Week" max_length="40" name="all_week" type="boolean"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;    var dt = new SH_EmpTime();&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var floating = dt.getFloating(id);&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return floating;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Available Floating Holidays" max_length="40" name="available_floating_holidays" read_only="true" type="integer" virtual="true"/>
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var gH = new SH_EmpTime();&#13;&#10;&#9;var hours =&#9;gH.getMaxHours(id);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return hours;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" read_only="true" type="decimal" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;var id = gs.getUserID();&#10;&#9;var gH = new SH_EmpTime();&#10;&#9;var hours =&#9;gH.getMaxHours(id);&#10;&#9;// Add your code here&#10;&#9;return hours;  // return the calculated value&#10;&#10;})(current);" label="Eligible Vacation Hours" max_length="20" name="eligible_vacation_hours" read_only="true" type="decimal" virtual="true"/>
         <element label="Employee Hired Date" max_length="40" name="employee_hired_date" type="glide_date"/>
         <element choice="3" default="Choose a Holiday" label="Floating Holidays" max_length="40" name="floating_holidays" reference="x_125992_employee_paid_holiday_schedule" reference_qual="floating_holiday=true^EQ" reference_qual_condition="floating_holiday=true^EQ" type="reference">
             <choice/>
         </element>
         <element default="0" label="Friday" max_length="40" name="friday" type="decimal"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#9;&#13;&#10;&#9;/*var dt = new SH_EmpTime();&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var accr = dt.getUserAccrual(id);&#13;&#10;&#9;&#13;&#10;&#9;return accr;*/  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Hours Accrued" max_length="40" name="hours_accrued" read_only="true" type="decimal" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#9;&#13;&#10;&#9;var dt = new SH_EmpTime();&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;var accr = dt.getUserAccrual(id);&#13;&#10;&#9;&#13;&#10;&#9;return accr;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Hours Accrued" max_length="40" name="hours_accrued" read_only="true" type="decimal" virtual="true"/>
         <element default="0" label="Monday" max_length="40" name="monday" type="decimal"/>
         <element label="Primary Backup Employee" max_length="32" name="primary_backup_employee" reference="sys_user" type="reference"/>
         <element label="PTO Description" max_length="4000" name="pto_description" type="string"/>
@@ -24,11 +25,11 @@
             </choice>
         </element>
         <element label="PTO Title" mandatory="true" max_length="128" name="pto_title" type="string"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;var rPTO = new SH_EmpTime();&#13;&#10;&#9;var id = gs.getUserID();&#13;&#10;&#9;rPTO.getRemianingPTO(id);&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return rPTO.getRemianingPTO(id);  // return the calculated value&#13;&#10;})(current);" label="Remaining PTO" max_length="40" name="remaining_pto" read_only="true" type="integer" virtual="true"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;var rPTO = new SH_EmpTime();&#10;&#9;var id = gs.getUserID();&#10;&#9;rPTO.getRemianingPTO(id);&#10;&#9;// Add your code here&#10;&#9;return rPTO.getRemianingPTO(id);  // return the calculated value&#10;})(current);" label="Remaining PTO" max_length="40" name="remaining_pto" read_only="true" type="integer" virtual="true"/>
         <element default="0" label="Saturday" max_length="20" name="saturday" type="decimal"/>
         <element default="0" label="Sunday" max_length="20" name="sunday" type="decimal"/>
         <element default="0" label="Thursday" max_length="40" name="thursday" type="decimal"/>
-        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#9;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" default="0" label="Total" max_length="40" name="total" read_only="true" type="decimal"/>
+        <element calculation="(function calculatedFieldValue(current) {&#10;&#9;&#10;&#9;// Add your code here&#10;&#9;return '';  // return the calculated value&#10;&#10;})(current);" default="0" label="Total" max_length="40" name="total" read_only="true" type="decimal"/>
         <element default="0" label="Tuesday" max_length="40" name="tuesday" type="decimal"/>
         <element choice="1" default="Choose a Holiday" label="Usan Paid Holidays" max_length="128" name="usan_paid_holidays" reference="x_125992_employee_paid_holiday_schedule" reference_qual="floating_holiday=false^EQ" reference_qual_condition="floating_holiday=false^EQ" type="reference">
             <choice/>

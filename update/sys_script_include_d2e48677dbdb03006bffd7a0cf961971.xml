@@ -94,7 +94,8 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		var floatDate = days;
 		var gd = new GlideDateTime();		
 		gd.setValue(floatDate);
-		var day = gd.getDayOfWeekUTC()+1;
+		//var day = gd.getDayOfWeekUTC()+1;
+		var day = gd.getDayOfWeekUTC();
 		gd.addDaysUTC(-day);	
 		gd.setGlideDateTime(gd);
 		return gd.getDate();
@@ -134,14 +135,14 @@ SH_PTOGetDays.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_on>2018-01-03 16:56:26</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>d2e48677dbdb03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>45</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>SH_PTOGetDays</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_d2e48677dbdb03006bffd7a0cf961971</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-15 13:53:28</sys_updated_on>
+        <sys_updated_by>steven.holt</sys_updated_by>
+        <sys_updated_on>2018-01-15 15:50:48</sys_updated_on>
     </sys_script_include>
 </record_update>

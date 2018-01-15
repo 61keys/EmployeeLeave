@@ -21,6 +21,8 @@
 		g_form.setReadonly('friday',false);
 	    g_form.setReadonly('saturday',false);
 		g_form.setReadonly('sunday',false);
+		g_form.setValue('work_start','');
+		g_form.setValue('work_end','');
 		g_form.setValue('week_starts_on','');
 		g_form.setValue('monday',0);
 		g_form.setValue('tuesday',0);
@@ -42,7 +44,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>97a49a7fdbdb03006bffd7a0cf961943</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>SH_PTOFields</sys_name>
         <sys_overrides/>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
@@ -50,8 +52,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_client_97a49a7fdbdb03006bffd7a0cf961943</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-12 19:14:02</sys_updated_on>
+        <sys_updated_by>steven.holt</sys_updated_by>
+        <sys_updated_on>2018-01-15 15:53:39</sys_updated_on>
         <table>x_125992_employee_employee_leave_request_table</table>
         <type>onChange</type>
         <ui_type>10</ui_type>

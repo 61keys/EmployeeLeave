@@ -5,24 +5,24 @@
         <license_condition/>
         <license_model>none</license_model>
         <license_roles/>
-        <name>x_125992_employee_leave_request_table</name>
+        <name>x_125992_employee_paid_holiday_schedule</name>
         <op_delete>true</op_delete>
         <op_insert>true</op_insert>
         <op_update>true</op_update>
         <owner_condition/>
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-12-08 16:12:53</sys_created_on>
+        <sys_created_on>2017-12-11 13:18:52</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>48c1046bdb3203006bffd7a0cf961925</sys_id>
+        <sys_id>993bd76bdba70700f25df969af961931</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_125992_employee_leave_request_table</sys_name>
+        <sys_name>x_125992_employee_paid_holiday_schedule</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>ua_table_licensing_config_48c1046bdb3203006bffd7a0cf961925</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_993bd76bdba70700f25df969af961931</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-12-08 16:12:53</sys_updated_on>
+        <sys_updated_on>2017-12-11 13:18:52</sys_updated_on>
     </ua_table_licensing_config>
 </record_update>
