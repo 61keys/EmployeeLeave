@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="3" type="collection">
+    <element extends="task" label="Employee Leave Request" max_length="40" name="x_125992_employee_employee_leave_request_table" sizeclass="10" type="collection">
         <element label="All Week" max_length="40" name="all_week" type="boolean"/>
         <element calculation="(function calculatedFieldValue(current) {&#10;    var dt = new SH_EmpTime();&#10;&#9;var id = gs.getUserID();&#10;&#9;var floating = dt.getFloating(id);&#10;&#9;&#10;&#9;&#10;&#9;// Add your code here&#10;&#9;return floating;  // return the calculated value&#10;&#10;})(current);" label="Available Floating Holidays" max_length="40" name="available_floating_holidays" read_only="true" type="integer" virtual="true"/>
         <element label="Days Requested (In Hours)" max_length="40" name="days_requested" type="integer"/>
