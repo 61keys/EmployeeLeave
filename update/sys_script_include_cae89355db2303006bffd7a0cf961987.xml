@@ -82,6 +82,27 @@ SH_PTOCalendar.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		ncal.insert();	
 	},
 	
+	getCalendarID: function(taskNum){		
+		var calID = '';
+		var gr = new GlideRecord('user_calendar_event');		
+		gr.addQuery('task' , taskNum);
+		gr.query();
+		while (gr.next()) {			
+			calID = gr.sys_id;
+		}
+		
+		return calID;
+	},	
+	
+	deleteCalendar: function(calId){		
+		var gr = new GlideRecord('user_calendar_event');		
+		gr.addQuery('sys_id' , calId);
+		gr.query();
+		while (gr.next()) {			
+			gr.deleteRecord();
+		}
+	},
+	
 	
 	type: 'SH_PTOCalendar'
 });]]></script>
@@ -90,14 +111,14 @@ SH_PTOCalendar.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_on>2018-01-08 14:55:56</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>cae89355db2303006bffd7a0cf961987</sys_id>
-        <sys_mod_count>16</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>SH_PTOCalendar</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_cae89355db2303006bffd7a0cf961987</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-01-08 22:21:17</sys_updated_on>
+        <sys_updated_by>steven.holt</sys_updated_by>
+        <sys_updated_on>2018-01-28 04:02:03</sys_updated_on>
     </sys_script_include>
 </record_update>

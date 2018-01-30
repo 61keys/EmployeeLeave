@@ -201,8 +201,8 @@ SH_EmpTime.prototype = {
 		var sgd2 = new GlideDateTime();
 		sgd2.setDisplayValue(wEnd.toString());
 		var days= GlideDateTime.subtract(sgd1, sgd2);		
-		//days = this.getJustDays(days.getDisplayValue());
-		days = 0;
+		days = this.getJustDays(days.getDisplayValue());
+		//days = 0;
 		
 		return parseInt(days);
 	},
@@ -311,6 +311,100 @@ SH_EmpTime.prototype = {
 		
 	},
 	
+	updatePTORestore:function(category,total,userId){
+		//gs.info("Resore PTO: id: " + userId + " category: " + category + " total: " + total + " task: " + taskID);
+		if(category == 'company_holiday'){
+			this.restoreCompanyDays(userId);
+		}
+		if(category == 'floating_holiday'){
+			this.restoreFloatingDays(userId);
+		}
+		if(category == 'vacation'){
+			this.restoreMaxHours(userId, total);
+		}
+	},
+	
+	updatePTORestoreTC:function(category,total,userId){
+		//gs.info("Resore PTO: id: " + userId + " category: " + category + " total: " + total + " task: " + taskID);
+		if(category == 'company_holiday'){
+			this.restoreCompanyDays(userId);
+		}
+		if(category == 'floating_holiday'){
+			this.restoreFloatingDays(userId);
+		}
+		if(category == 'vacation'){
+			this.restoreMaxHours(userId, total);
+		}
+	},
+	
+	restoreCompanyDays: function(id){
+		//gs.info("UpdateFLoating: id: " + userId);
+		var result='';
+		var gr = new GlideRecord("sys_user");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			gr.x_125992_employee_company_holidays = gr.x_125992_employee_company_holidays + 1;
+			gr.update();
+		}
+	},
+	
+	restoreFloatingDays: function(id){
+		//gs.info("UpdateFLoating: id: " + userId);
+		var result='';
+		var gr = new GlideRecord("sys_user");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		if(gr.next()){
+			gr.x_125992_employee_floating_holidays = gr.x_125992_employee_floating_holidays + 1;
+			gr.update();
+		}
+	},
+	
+	restoreMaxHours: function(id,total){
+		//gs.info("updateMaxHours: id: " + id + " total: " + total);
+		var result='';
+		var gr = new GlideRecord("sys_user");
+		gr.addQuery('sys_id', id);
+		gr.query();
+		//gs.error("updateMaxHours", gr.getLastErrorMessage());
+		if(gr.next()){
+			gr.x_125992_employee_remaning_pto_hours = gr.x_125992_employee_remaning_pto_hours + total;
+			gr.x_125992_employee_accrued_vacation_hours = gr.x_125992_employee_accrued_vacation_hours + total;
+			gr.update();
+		}
+	},
+	
+	getCardsId: function(taskNum){
+		var cardId = '';
+		var gr = new GlideRecord('time_card');
+		gr.addQuery('task' , taskNum);
+		gr.query();
+		if(gr.next()){
+			cardId = gr.sys_id;
+		}
+		return cardId;
+	},
+	
+	deleteCards: function(cardsID){
+		var gr = new GlideRecord('time_card');
+		gr.addQuery('sys_id' , cardsID);
+		gr.query();
+		while(gr.next()){
+			gr.deleteRecord();
+		}
+		
+	},	
+	
+	deletePTO: function(taskNum){
+		var gr = new GlideRecord('x_125992_employee_employee_leave_request_table');
+		gr.addQuery('task' , taskNum);
+		gr.query();
+		if(gr.next()){
+			gr.deleteRecord();
+		}
+		
+	},	
 	type: 'SH_EmpTime'
 	
 	
@@ -320,7 +414,7 @@ SH_EmpTime.prototype = {
         <sys_created_on>2017-12-11 19:49:27</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>01ff0ca4db0b03006bffd7a0cf961971</sys_id>
-        <sys_mod_count>150</sys_mod_count>
+        <sys_mod_count>152</sys_mod_count>
         <sys_name>SH_EmpTime</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy>read</sys_policy>
@@ -328,6 +422,6 @@ SH_EmpTime.prototype = {
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
         <sys_update_name>sys_script_include_01ff0ca4db0b03006bffd7a0cf961971</sys_update_name>
         <sys_updated_by>steven.holt</sys_updated_by>
-        <sys_updated_on>2018-01-15 15:10:54</sys_updated_on>
+        <sys_updated_on>2018-01-30 12:32:01</sys_updated_on>
     </sys_script_include>
 </record_update>

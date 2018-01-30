@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>rpt-tempbf822bfedb69cb801a0a71dabf9619efsteven.holt</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>steven.holt</sys_created_by>
+        <sys_created_on>2018-01-30 11:57:18</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f0838428db88d740df057a131f9619c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>steven.holt</sys_updated_by>
+        <sys_updated_on>2018-01-30 11:57:18</sys_updated_on>
+        <title>Rpt-tempbf822bfedb69cb801a0a71dabf9619efsteven.holt</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

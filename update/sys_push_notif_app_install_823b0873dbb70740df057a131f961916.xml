@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_push_notif_app_install">
+    <sys_push_notif_app_install action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <last_registered_on>2018-01-29 21:50:49</last_registered_on>
+        <sys_class_name>sys_push_notif_app_install</sys_class_name>
+        <sys_created_by>steven.holt</sys_created_by>
+        <sys_created_on>2018-01-28 04:35:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>823b0873dbb70740df057a131f961916</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>252528ddcf30a7f5194a13ca9474c7c764eecd2b35ccfdc3c9b7941c6e5d6d95</sys_name>
+        <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
+        <sys_policy/>
+        <sys_push_application_id display_value="ServiceNow Mobile Application">ab704041ff1102009738ffffffffff33</sys_push_application_id>
+        <sys_push_platform_id display_value="Apple">20e71f30ff0002009738ffffffffff6b</sys_push_platform_id>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
+        <sys_update_name>sys_push_notif_app_install_823b0873dbb70740df057a131f961916</sys_update_name>
+        <sys_updated_by>steven.holt</sys_updated_by>
+        <sys_updated_on>2018-01-29 21:50:49</sys_updated_on>
+        <sys_user_id display_value="Steven Holt">165e3352db9b1240f5fa5aa9bf9619c3</sys_user_id>
+        <token>252528ddcf30a7f5194a13ca9474c7c764eecd2b35ccfdc3c9b7941c6e5d6d95</token>
+    </sys_push_notif_app_install>
+</record_update>

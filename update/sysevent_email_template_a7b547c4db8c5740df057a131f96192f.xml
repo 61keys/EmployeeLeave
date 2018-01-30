@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sysevent_email_template">
     <sysevent_email_template action="INSERT_OR_UPDATE">
-        <collection>x_125992_employee_employee_leave_request_table</collection>
+        <collection>sysapproval_approver</collection>
         <email_layout display_value="Employee Leave Request">655aeb83db338340df057a131f961986</email_layout>
         <message/>
         <message_html><![CDATA[<p><strong><span style="font-size: 12pt;">Employee Leave&nbsp; Approval Request</span></strong></p>
@@ -10,14 +10,14 @@
 <div>Company: USAN</div>
 </div>
 <div>
-<div>Type: Vacation</div>
+<div>Type: PTO</div>
 </div>
 <div>
-<div>Description: ${description}</div>
-<div>Vacation Start: ${work_start}</div>
+<div>Description: ${mail_script:PTOEmailScript}</div>
+<div>Vacation Start: ${sysapproval.work_start}</div>
 </div>
 <div>
-<div>Vacation End: ${work_end}</div>
+<div>Vacation End: ${sysapproval.work_start}</div>
 <div>&nbsp;</div>
 <div>${mailto:mailto.approval}</div>
 <div>${mailto:mailto.rejection}&nbsp;</div>
@@ -30,26 +30,26 @@
 <div>
 <div>Click here to view ${sysapproval.sys_class_name}: ${sysapproval.URI}</div>
 </div>
-<div>&nbsp;</div>]]></message_html>
+<p>&nbsp;</p>]]></message_html>
         <message_list/>
         <message_text/>
-        <name>Employee Leave Request</name>
+        <name>employee.leave.request</name>
         <sms_alternate/>
-        <subject>Vacation approval from ${sys_created_by} for  ${work_start} to  ${work_end} - ${number}</subject>
+        <subject>PTO approval from ${sys_created_by} for ${sysapproval.work_start} to  ${sysapproval.work_end} - ${sysapproval.number}</subject>
         <sys_class_name>sysevent_email_template</sys_class_name>
         <sys_created_by>steven.holt</sys_created_by>
-        <sys_created_on>2018-01-26 12:36:27</sys_created_on>
+        <sys_created_on>2018-01-29 12:49:58</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>03842f4fdbff4340df057a131f96197d</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Employee Leave Request</sys_name>
+        <sys_id>a7b547c4db8c5740df057a131f96192f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>employee.leave.request</sys_name>
         <sys_package display_value="Employee Leave Request" source="x_125992_employee">2fb148a7db3203006bffd7a0cf9619ef</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Employee Leave Request">2fb148a7db3203006bffd7a0cf9619ef</sys_scope>
-        <sys_update_name>sysevent_email_template_03842f4fdbff4340df057a131f96197d</sys_update_name>
+        <sys_update_name>sysevent_email_template_a7b547c4db8c5740df057a131f96192f</sys_update_name>
         <sys_updated_by>steven.holt</sys_updated_by>
-        <sys_updated_on>2018-01-26 13:14:07</sys_updated_on>
+        <sys_updated_on>2018-01-29 16:50:50</sys_updated_on>
         <sys_version>2</sys_version>
     </sysevent_email_template>
 </record_update>
